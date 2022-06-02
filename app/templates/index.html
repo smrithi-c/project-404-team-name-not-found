@@ -1,40 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+import os
+from flask import Flask, render_template, request
+from dotenv import load_dotenv
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:title" content="Personal Portfolio">
-    <meta property="og:description" content="My Personal Portfolio">
-    <meta property="og:url" content="{{ url }}">
+load_dotenv()
+app = Flask(__name__)
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
 
-    <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
-    <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
-    <title>{{ title }}</title>
-</head>
+@app.route('/')
+def index():
+    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"))
 
-<body>
-    <header class="nav-bar">
-        <div class="nav-content">
-            <a href="/">
-                <div class="nav-logo">
-                    <img src="./static/img/logo.svg" />
-                </div>
-            </a>
-        </div>
-    </header>
+@app.route('/hobbies')
+def hobbies():
+    return render_template('hobbies.html', title="Hobbies", url=os.getenv("URL"))
 
-    <div class="profile">
-        <div id="profile-picture" class="profile-picture">
-            <img src="./static/img/logo.jpg">
-        </div>
-        <h1>{{ title }}</h1>
-    </div>
-</body>
-</html>
+@app.route('/travels')
+def travels():
+    return render_template('travels.html', title="Oh, the places I've Been!", url=os.getenv("URL"))
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html', title="Get in Touch!", url=os.getenv("URL"))
