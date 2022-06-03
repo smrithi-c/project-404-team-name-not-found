@@ -49,6 +49,9 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all dep
 ```bash
 pip install -r requirements.txt
 ```
+```bash
+pip install Flask-Mail ```
+
 
 ## Usage
 
