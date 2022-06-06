@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %} 
+<head>
+  <style>
+  .one img {
+  width: auto;
+  height: 400px;
+  max-height: 400px;
+}
+.two img {
+  width: auto;
+  height: 400px;
+  max-height: 400px;
+}
+.three img {
+  width: auto;
+  height: 400px;
+  max-height: 400px;
+}
+h1{
+ text-align: center;
+}
+
+
+</style>
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+ <link lang='sass' rel="stylesheet" href="./static/styles/hobby.css">
+</head>
+<br> </br>
+<h2> What are my hobbies? </h2>
+<body>
+<div class= holder>
+<div class="bg-info  px-4 py-5 my-5 text-center border-bottom">
+    
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4"> In my free time, I enjoy spending time with family and friends, enjoying nature, brush lettering, and reading mysteries. </p>
+      
+    </div>
+  </div>
+</div>
+
+<div class= container>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active one">
+      <img class="d-block w-100" img src="/static/img/reading.jpeg"  alt="First slide">
+    </div>
+    <div class="carousel-item two ">
+      <img class="d-block w-100" img src="/static/img/lettering.jpeg" alt="Second slide">
+    </div>
+    <div class="carousel-item three">
+      <img class="d-block w-100"img src="/static/img/nature.jpg"alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</body>
+</div>
+
+
+
+{% endblock %}
