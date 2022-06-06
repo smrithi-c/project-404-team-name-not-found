@@ -3,7 +3,7 @@ p, h1, h2, h3, h4, h5, h6, button {
 }
 
 body {
-    background-color: #f5f5f9;
+    background-color:f5f5f9 #;
     background-size: cover;
     width: auto; 
     overflow-x: hidden;
@@ -24,29 +24,37 @@ body {
     display: inline-flex;
     height: 60%;
     width: 350px;
+
 }
 
 .nav-content .nav-logo {
     height: 60px;
-    margin: auto;
+    margin: auto; 
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .nav-logo img {
     width: 200px;
+
 }
 
+.bg-success {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+}
 .nav-content nav {
     display: block;
     width: 100%;
     text-align: right;
     padding-top: 0px;
     padding-right: 0px;
+
 }
 
 .profile {
@@ -60,6 +68,12 @@ body {
         font-size: 50px;
         font-weight: 700;
         color: white;
+}
+.about h1 {
+        font-size: 20px;
+        font-weight: 300;
+        color: white
+         text-align: left;
 }
 
 .profile img {
@@ -75,6 +89,7 @@ body {
 .profile .profile-picture {
     margin-bottom: 30px;
     height: 200px;
+
 }
 
 .banner {
@@ -88,10 +103,19 @@ body {
     max-height:60px;
     width: auto;
     height: auto;
+
 }
 
 .banner .title {
     color: white;
     font-size: 50px;
     font-weight: 700;
+}
+
+.display-4 {
+    .font-size: 30 px;
+
+}
+.b-example-divider{
+   fill: skyblue;
 }

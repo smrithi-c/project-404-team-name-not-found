@@ -2,5 +2,67 @@
 
 {% block content %} 
 
-<h1> Travels </h1>
+<head> 
+        <link lang='sass' rel="stylesheet" href="./static/styles/contact.css">
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+
+   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+  <style>
+  	#map { height: 500px; }
+  </style>
+</head>
+<br> </br>
+
+<h2 text-align=center> Some of the places I've been </h2>
+<br> </br>
+
+ <div id="map">
+ 	<script> var map = L.map('map').setView([20, 0], 2); </script>
+ 	<script> L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);</script>
+
+<script>
+
+	var points = [
+    [40.7, -74],
+    [25.2048, 55.2708],
+    [13.0827, 80.2707],
+    [38.9072,-77.0369],
+    [33.7490, -84.3880],
+     [41.8781, -87.6298],
+     [37.7749, -122.4194],
+     [43.6532,-79.3832],
+     [25.7617,- 80.1918]
+
+    ]
+
+    var cities= [ "New York, USA" , "Dubai, UAE", "Chennai, India", "Washington DC, USA", "Atlanta, USA", "Chicago, USA", "San Francisco, USA","Toronto, Canada", "Miami, USA"]
+	for (let i = 0; i < points.length; i++) {
+	var marker = L.marker(points[i]).addTo(map);
+	marker.bindPopup((cities[i])).openPopup();
+	}
+
+
+
+
+
+
+
+</script> 
+
+ </div>
+
+
+  
 {% endblock %}

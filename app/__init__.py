@@ -25,6 +25,7 @@ def index():
 @app.route('/hobbies')
 def hobbies():
     return render_template('hobbies.html', title="Hobbies", url=os.getenv("URL"))
+    
 
 @app.route('/travels')
 def travels():
@@ -43,3 +44,5 @@ def contact():
         msg.body=sendthis
         mail.send(msg)
     return render_template('contact.html', title="Get in Touch!", url=os.getenv("URL"))
+
+
