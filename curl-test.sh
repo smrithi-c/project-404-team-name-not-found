@@ -12,5 +12,7 @@ else
 	echo NAME
 fi
 
-
-curl -X "DELETE" 'http://localhost:5000/api/timeline_post'
+#while true 
+	#do
+		#curl -X "DELETE" 'http://localhost:5000/api/timeline_post'
+	#done
