@@ -45,13 +45,13 @@ class AppTestCase(unittest.TestCase):
         assert "Invalid name" in html
 
         # POST request with empty content
-        self.client.post("/api/timeline_post", data={"name": "Ashley", "email": "ashley@example.com", "content":""}, content_type='multipart/form-data')
+        response = self.client.post("/api/timeline_post", data={"name": "Ashley", "email": "ashley@example.com", "content":""}, content_type='multipart/form-data')
         assert response.status_code == 400
         html = response.get_data(as_text=True)
         assert "Invalid content" in html
 
         # POST request with malformed email
-        self.client.post("/api/timeline_post", data={"name": "Ashley", "email": "what's an email?", "content":"Hello my name is Ashley !"}, content_type='multipart/form-data')
+        response = self.client.post("/api/timeline_post", data={"name": "Ashley", "email": "what's an email?", "content":"Hello my name is Ashley !"}, content_type='multipart/form-data')
         assert response.status_code == 400
         html = response.get_data(as_text=True)
         assert "Invalid email" in html

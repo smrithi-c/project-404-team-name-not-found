@@ -1,5 +1,6 @@
 import datetime
 import os
+import re
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
 from playhouse.shortcuts import model_to_dict
@@ -82,12 +83,32 @@ def timeline():
 
 @app.route('/api/timeline_post', methods=[ 'POST' ])
 def post_time_line_post():
+    if not 'name' in request.form or len(request.form['name']) == 0:
+        return "Invalid name", 400
+
+    if not 'content' in request.form or len(request.form['content']) == 0:
+        return "Invalid content", 400
+    
+
+    if not 'email' in request.form or len(request.form['email']) == 0:
+        return "Invalid email", 400
+
     name = request.form['name']
     email = request.form['email']
     content = request.form['content']
-    timeline_post = TimelinePost.create(name=name, email=email, content=content)
 
+    regex = re.compile(r"([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|\[[\t -Z^-~]*])")
+
+    if not re.match(regex, email):
+        return "Invalid email", 400
+    
+    timeline_post = TimelinePost.create(name=name, email=email, content=content)
     return model_to_dict(timeline_post)
+    
+
+        
+
+    
 
 @app.route('/api/timeline_post', methods=[ 'GET'])
 def get_time_line_post():
