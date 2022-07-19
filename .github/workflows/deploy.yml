@@ -6,7 +6,7 @@ on:
       - main
   workflow_dispatch:
   
-  jobs:
+jobs:
     deploy:
       name: "Deploy to AWS EC2 Virtual Machine"
       runs-on: ubuntu-latest
