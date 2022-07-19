@@ -31,4 +31,4 @@ jobs:
             SSH_IP: ${{ secrets.SSH_IP }}
             
         - name: Deploy 
-          run: ssh my-vm && 'cd ${{ secrets.PROJECT_ROOT }} && chmod +x ~/redeploy.sh && ~/redeploy.sh'
+          run: ssh my-vm && 'cd ${{ secrets.PROJECT_ROOT }} && chmod +x ./redeploy.sh && ./redeploy.sh'
