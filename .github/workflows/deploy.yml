@@ -20,8 +20,8 @@ jobs:
             Host my-vm
               HostName $SSH IP
               User $SSH USER
-              IdentityFile~/.ssh/deploy-key.pem
-              StrictHostKeyCheckingno
+              IdentityFile ~/.ssh/deploy-key.pem
+              StrictHostKeyChecking no
             END
           env:
             SSH_USER: ${{ secrets.SSH_USER }}
