@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: '3.6.8' 
           
-      -name: Setup Python Virtual Environment
+      - name: Setup Python Virtual Environment
        run: python -m venv python3-virtualenv
         
       - name: Install Dependencies
