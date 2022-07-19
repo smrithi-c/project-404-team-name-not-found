@@ -20,7 +20,7 @@ jobs:
             Host my-vm
               HostName $SSH IP
               User $SSH USER
-              IdentityFile~/.ssh/deploy-kev.pem
+              IdentityFile~/.ssh/deploy-key.pem
               StrictHostKeyCheckingno
             END
           env:
@@ -29,4 +29,4 @@ jobs:
             SSH IP: ${{ secrets. SSH_IP }}
             
         - name: Print proiect root directory
-          run: ssh my-vm "cd ${{ secrets. PROJECT ROOT }} && pwd'
+          run: ssh my-vm "cd ${{ secrets. PROJECT_ROOT }} && pwd'
